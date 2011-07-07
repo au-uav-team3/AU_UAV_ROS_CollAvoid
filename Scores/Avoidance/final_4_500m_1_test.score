@@ -1,0 +1,17 @@
+Plane ID	Distance Traveled(m)	Minimum Travel(m)		Waypoints Achieved	Time of Death(s)
+--------	--------------------	-----------------		------------------	----------------
+0		6157.976000		4822.936486			22			ALIVE
+1		6571.488000		5023.753922			17			ALIVE
+2		6627.368000		5683.236731			24			ALIVE
+3		6336.792000		5466.314308			22			ALIVE
+--------	--------------------	-----------------		------------------	----------------
+Averages:	6423.405762		5249.060547			21.250000		600.000000
+
+Totals:
+Elapsed time:600.596148
+Waypoints reached: 85
+Number of conflicts: 0
+Number of collisions: 0
+Dead plane count: 0 of 4
+Distance actual/distance minimum: 1.223725
+Final Score: 425

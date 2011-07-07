@@ -1,0 +1,16 @@
+Our implementation of collision avoidance as part of the Auburn UAV ATTRACT project. 
+
+The ROS package utilized was written by Matt Holt, and can be found at https://github.com/holtjma/AU-UAV-ROS. 
+
+To install, first review the README and documentation for Matt Holt's code. The header files should be placed in the AU_UAV_ROS/include directory.  The corresponding sources should be placed in the AU_UAV_ROS/src/AU_UAV_ROS directory.  Additionally, the collision avoidance and visualization nodes should be placed in the AU_UAV_ROS/src directory.  
+
+After installing the code, update the CMakeLists file so the collision avoidance and visualization nodes are compiled, and update the launch file to include collision avoidance and visualization.
+
+In order to enable real-time tracking in Google Earth, the following steps must be followed.  First, a flightData folder must be created in the AU_UAV_ROS directory.  When the visualization node is enabled, it outputs to a file named "map.kml" located within this flightData directory.  Then, in Google Earth, navigate to Add->Network Link on the menu bar.  Select map.kml as the network link, and then select Refresh from the tab menu.  Select a time-based refresh of once per second; when finished click OK to begin real-time tracking.
+
+Side note: To help in our simulations, when a UAV reaches its final waypoint, it no longer is involved in the force calcations.  To change this behavior, modify lines 179-189 of collisionAvoidance.cpp from if (requestWaypointInfoSrv.response.latitude == -1000) .... to the following:
+
+if (requestWaypointInfoSrv.response.latitude == -1000){ /* plane has no waypoints to go to */
+	pobjects[planeID].update(*msg); /* update plane with new position */
+	return; 
+}
